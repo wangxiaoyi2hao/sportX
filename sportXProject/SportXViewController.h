@@ -15,6 +15,7 @@
     IBOutlet UITableView*_tableView;
     IBOutlet UIView*_headerView;
     IBOutlet UIImageView*_tabImageMain;
+    IBOutlet UIView*putCollView;
 
 }
 @end

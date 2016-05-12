@@ -20,7 +20,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     
-  self.tabBarController.title=@"发现";
+  self.tabBarController.title=@"关注";
      [self.tabBarController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
 }

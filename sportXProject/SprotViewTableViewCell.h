@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SprotViewTableViewCell : UITableViewCell
+@interface SprotViewTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 {
 
 
 }
-@property (weak, nonatomic) IBOutlet UIView *changeImgView;
+@property(nonatomic,weak)IBOutlet UIView *changeView1;
+@property(nonatomic, strong)UICollectionView *collectionView;
+@property(nonatomic,strong)NSMutableArray*imageAray;
 @end

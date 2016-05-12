@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		F1061A7F1CE22F76006B45C4 /* SprotViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1061A7D1CE22F76006B45C4 /* SprotViewTableViewCell.m */; };
 		F1061A801CE22F76006B45C4 /* SprotViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1061A7E1CE22F76006B45C4 /* SprotViewTableViewCell.xib */; };
+		F1061A851CE24038006B45C4 /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = F1061A811CE24038006B45C4 /* card.png */; };
+		F1061A861CE24038006B45C4 /* gym.png in Resources */ = {isa = PBXBuildFile; fileRef = F1061A821CE24038006B45C4 /* gym.png */; };
+		F1061A871CE24038006B45C4 /* speech.png in Resources */ = {isa = PBXBuildFile; fileRef = F1061A831CE24038006B45C4 /* speech.png */; };
+		F1061A881CE24038006B45C4 /* yoga.png in Resources */ = {isa = PBXBuildFile; fileRef = F1061A841CE24038006B45C4 /* yoga.png */; };
+		F1230E7F1CE2FC1800852885 /* runmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = F1230E7E1CE2FC1800852885 /* runmachine.png */; };
+		F1230E821CE2FDBF00852885 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F1230E811CE2FDBF00852885 /* UIViewExt.m */; };
+		F1230E861CE2FE5800852885 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = F1230E831CE2FE5800852885 /* compass.png */; };
+		F1230E871CE2FE5800852885 /* feed.png in Resources */ = {isa = PBXBuildFile; fileRef = F1230E841CE2FE5800852885 /* feed.png */; };
+		F1230E881CE2FE5800852885 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = F1230E851CE2FE5800852885 /* user.png */; };
+		F1230E8D1CE322F100852885 /* SportRoomDesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1230E8B1CE322F100852885 /* SportRoomDesViewController.m */; };
+		F1230E8E1CE322F100852885 /* SportRoomDesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1230E8C1CE322F100852885 /* SportRoomDesViewController.xib */; };
+		F1230E901CE3242900852885 /* all_back.png in Resources */ = {isa = PBXBuildFile; fileRef = F1230E8F1CE3242900852885 /* all_back.png */; };
+		F1230E941CE47BFB00852885 /* SprotRoomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1230E921CE47BFB00852885 /* SprotRoomTableViewCell.m */; };
+		F1230E951CE47BFB00852885 /* SprotRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1230E931CE47BFB00852885 /* SprotRoomTableViewCell.xib */; };
+		F1359E181CE2422B0028CD80 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F1359E171CE2422B0028CD80 /* MBProgressHUD.m */; };
 		F157E5BD1CCDB8DC0087B4CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F157E5BC1CCDB8DC0087B4CD /* main.m */; };
 		F157E5C01CCDB8DC0087B4CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F157E5BF1CCDB8DC0087B4CD /* AppDelegate.m */; };
 		F157E5C31CCDB8DC0087B4CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F157E5C21CCDB8DC0087B4CD /* ViewController.m */; };
@@ -56,6 +71,25 @@
 		F1061A7C1CE22F76006B45C4 /* SprotViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SprotViewTableViewCell.h; sourceTree = "<group>"; };
 		F1061A7D1CE22F76006B45C4 /* SprotViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SprotViewTableViewCell.m; sourceTree = "<group>"; };
 		F1061A7E1CE22F76006B45C4 /* SprotViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SprotViewTableViewCell.xib; sourceTree = "<group>"; };
+		F1061A811CE24038006B45C4 /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
+		F1061A821CE24038006B45C4 /* gym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gym.png; sourceTree = "<group>"; };
+		F1061A831CE24038006B45C4 /* speech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speech.png; sourceTree = "<group>"; };
+		F1061A841CE24038006B45C4 /* yoga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoga.png; sourceTree = "<group>"; };
+		F1230E7E1CE2FC1800852885 /* runmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runmachine.png; sourceTree = "<group>"; };
+		F1230E801CE2FDBF00852885 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		F1230E811CE2FDBF00852885 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		F1230E831CE2FE5800852885 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		F1230E841CE2FE5800852885 /* feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed.png; sourceTree = "<group>"; };
+		F1230E851CE2FE5800852885 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		F1230E8A1CE322F100852885 /* SportRoomDesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportRoomDesViewController.h; sourceTree = "<group>"; };
+		F1230E8B1CE322F100852885 /* SportRoomDesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportRoomDesViewController.m; sourceTree = "<group>"; };
+		F1230E8C1CE322F100852885 /* SportRoomDesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportRoomDesViewController.xib; sourceTree = "<group>"; };
+		F1230E8F1CE3242900852885 /* all_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_back.png; sourceTree = "<group>"; };
+		F1230E911CE47BFB00852885 /* SprotRoomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SprotRoomTableViewCell.h; sourceTree = "<group>"; };
+		F1230E921CE47BFB00852885 /* SprotRoomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SprotRoomTableViewCell.m; sourceTree = "<group>"; };
+		F1230E931CE47BFB00852885 /* SprotRoomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SprotRoomTableViewCell.xib; sourceTree = "<group>"; };
+		F1359E161CE2422B0028CD80 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F1359E171CE2422B0028CD80 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F157E5B81CCDB8DC0087B4CD /* sportXProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportXProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F157E5BC1CCDB8DC0087B4CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F157E5BE1CCDB8DC0087B4CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +156,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1230E891CE3228700852885 /* 健身房详情 */ = {
+			isa = PBXGroup;
+			children = (
+				F1230E8A1CE322F100852885 /* SportRoomDesViewController.h */,
+				F1230E8B1CE322F100852885 /* SportRoomDesViewController.m */,
+				F1230E8C1CE322F100852885 /* SportRoomDesViewController.xib */,
+				F1230E911CE47BFB00852885 /* SprotRoomTableViewCell.h */,
+				F1230E921CE47BFB00852885 /* SprotRoomTableViewCell.m */,
+				F1230E931CE47BFB00852885 /* SprotRoomTableViewCell.xib */,
+			);
+			name = "健身房详情";
+			sourceTree = "<group>";
+		};
+		F1359E191CE2422E0028CD80 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F1359E161CE2422B0028CD80 /* MBProgressHUD.h */,
+				F1359E171CE2422B0028CD80 /* MBProgressHUD.m */,
+				F1230E801CE2FDBF00852885 /* UIViewExt.h */,
+				F1230E811CE2FDBF00852885 /* UIViewExt.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		F157E5AF1CCDB8DC0087B4CD = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +203,10 @@
 		F157E5BA1CCDB8DC0087B4CD /* sportXProject */ = {
 			isa = PBXGroup;
 			children = (
+				F1359E191CE2422E0028CD80 /* util */,
 				F157E5F11CCDBA540087B4CD /* 我 */,
 				F157E5F01CCDBA4E0087B4CD /* 消息 */,
-				F157E5EF1CCDBA490087B4CD /* 发现 */,
+				F157E5EF1CCDBA490087B4CD /* 关注 */,
 				F157E5EE1CCDBA420087B4CD /* 部落 */,
 				F157E5BE1CCDB8DC0087B4CD /* AppDelegate.h */,
 				F157E5BF1CCDB8DC0087B4CD /* AppDelegate.m */,
@@ -193,9 +252,7 @@
 		F157E5EE1CCDBA420087B4CD /* 部落 */ = {
 			isa = PBXGroup;
 			children = (
-				F1F0F0EA1CE1D04E0064C1F3 /* icon_success.png */,
-				F1F0F0EB1CE1D04E0064C1F3 /* icon_sure.png */,
-				F157E6061CCDC43A0087B4CD /* sportgo.jpg */,
+				F1230E891CE3228700852885 /* 健身房详情 */,
 				F157E5F21CCDBA6C0087B4CD /* SportXViewController.h */,
 				F157E5F31CCDBA6C0087B4CD /* SportXViewController.m */,
 				F157E5F41CCDBA6C0087B4CD /* SportXViewController.xib */,
@@ -203,7 +260,6 @@
 				F1061A7D1CE22F76006B45C4 /* SprotViewTableViewCell.m */,
 				F1061A7E1CE22F76006B45C4 /* SprotViewTableViewCell.xib */,
 				F1F0F0E71CE1CE7E0064C1F3 /* InviteImageViewCell.h */,
-				F1F0F0EE1CE1D06C0064C1F3 /* 0006.png */,
 				F1F0F0E81CE1CE7E0064C1F3 /* InviteImageViewCell.m */,
 				F1F0F0E41CE1CB9A0064C1F3 /* InfoEditCollectionViewCell.h */,
 				F1F0F0E51CE1CB9A0064C1F3 /* InfoEditCollectionViewCell.m */,
@@ -211,14 +267,14 @@
 			name = "部落";
 			sourceTree = "<group>";
 		};
-		F157E5EF1CCDBA490087B4CD /* 发现 */ = {
+		F157E5EF1CCDBA490087B4CD /* 关注 */ = {
 			isa = PBXGroup;
 			children = (
 				F157E5F71CCDBA7C0087B4CD /* OutSignViewController.h */,
 				F157E5F81CCDBA7C0087B4CD /* OutSignViewController.m */,
 				F157E5F91CCDBA7C0087B4CD /* OutSignViewController.xib */,
 			);
-			name = "发现";
+			name = "关注";
 			sourceTree = "<group>";
 		};
 		F157E5F01CCDBA4E0087B4CD /* 消息 */ = {
@@ -253,6 +309,19 @@
 		F1F0F0E11CE1C0840064C1F3 /* 首页图片 */ = {
 			isa = PBXGroup;
 			children = (
+				F1230E8F1CE3242900852885 /* all_back.png */,
+				F1F0F0EA1CE1D04E0064C1F3 /* icon_success.png */,
+				F1230E831CE2FE5800852885 /* compass.png */,
+				F1230E841CE2FE5800852885 /* feed.png */,
+				F1230E851CE2FE5800852885 /* user.png */,
+				F1F0F0EB1CE1D04E0064C1F3 /* icon_sure.png */,
+				F157E6061CCDC43A0087B4CD /* sportgo.jpg */,
+				F1F0F0EE1CE1D06C0064C1F3 /* 0006.png */,
+				F1061A811CE24038006B45C4 /* card.png */,
+				F1061A821CE24038006B45C4 /* gym.png */,
+				F1230E7E1CE2FC1800852885 /* runmachine.png */,
+				F1061A831CE24038006B45C4 /* speech.png */,
+				F1061A841CE24038006B45C4 /* yoga.png */,
 				F1F0F0E21CE1C0970064C1F3 /* tab_background.png */,
 			);
 			name = "首页图片";
@@ -361,17 +430,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1230E901CE3242900852885 /* all_back.png in Resources */,
 				F157E6071CCDC43A0087B4CD /* sportgo.jpg in Resources */,
+				F1230E7F1CE2FC1800852885 /* runmachine.png in Resources */,
 				F157E6091CCDC9DE0087B4CD /* nav_bg.png in Resources */,
 				F157E5F61CCDBA6C0087B4CD /* SportXViewController.xib in Resources */,
+				F1230E861CE2FE5800852885 /* compass.png in Resources */,
 				F1F0F0ED1CE1D04E0064C1F3 /* icon_sure.png in Resources */,
 				F157E6051CCDBA940087B4CD /* MineViewController.xib in Resources */,
 				F157E5FB1CCDBA7C0087B4CD /* OutSignViewController.xib in Resources */,
+				F1230E871CE2FE5800852885 /* feed.png in Resources */,
 				F1F0F0E31CE1C0970064C1F3 /* tab_background.png in Resources */,
+				F1061A861CE24038006B45C4 /* gym.png in Resources */,
+				F1230E8E1CE322F100852885 /* SportRoomDesViewController.xib in Resources */,
 				F157E6001CCDBA880087B4CD /* MessageViewController.xib in Resources */,
 				F157E5CB1CCDB8DC0087B4CD /* LaunchScreen.storyboard in Resources */,
 				F1061A801CE22F76006B45C4 /* SprotViewTableViewCell.xib in Resources */,
+				F1230E881CE2FE5800852885 /* user.png in Resources */,
+				F1061A881CE24038006B45C4 /* yoga.png in Resources */,
 				F1F0F0EC1CE1D04E0064C1F3 /* icon_success.png in Resources */,
+				F1061A851CE24038006B45C4 /* card.png in Resources */,
+				F1230E951CE47BFB00852885 /* SprotRoomTableViewCell.xib in Resources */,
+				F1061A871CE24038006B45C4 /* speech.png in Resources */,
 				F1F0F0EF1CE1D06C0064C1F3 /* 0006.png in Resources */,
 				F157E5C81CCDB8DC0087B4CD /* Assets.xcassets in Resources */,
 				F157E5C61CCDB8DC0087B4CD /* Main.storyboard in Resources */,
@@ -402,12 +482,16 @@
 				F1F0F0E61CE1CB9A0064C1F3 /* InfoEditCollectionViewCell.m in Sources */,
 				F1061A7F1CE22F76006B45C4 /* SprotViewTableViewCell.m in Sources */,
 				F157E5FF1CCDBA880087B4CD /* MessageViewController.m in Sources */,
+				F1230E941CE47BFB00852885 /* SprotRoomTableViewCell.m in Sources */,
 				F157E6041CCDBA940087B4CD /* MineViewController.m in Sources */,
+				F1230E821CE2FDBF00852885 /* UIViewExt.m in Sources */,
+				F1359E181CE2422B0028CD80 /* MBProgressHUD.m in Sources */,
 				F157E5F51CCDBA6C0087B4CD /* SportXViewController.m in Sources */,
 				F157E5C31CCDB8DC0087B4CD /* ViewController.m in Sources */,
 				F157E5C01CCDB8DC0087B4CD /* AppDelegate.m in Sources */,
 				F157E5BD1CCDB8DC0087B4CD /* main.m in Sources */,
 				F157E5FA1CCDBA7C0087B4CD /* OutSignViewController.m in Sources */,
+				F1230E8D1CE322F100852885 /* SportRoomDesViewController.m in Sources */,
 				F1F0F0E91CE1CE7E0064C1F3 /* InviteImageViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
