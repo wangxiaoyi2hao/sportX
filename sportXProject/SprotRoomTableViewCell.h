@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SprotRoomTableViewCell : UITableViewCell
-
+@property(nonatomic,weak)IBOutlet UILabel*lbDes;
 @end

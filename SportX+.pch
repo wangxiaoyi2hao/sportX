@@ -13,5 +13,11 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #define KScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define KScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define IPHONE4 [UIScreen mainScreen].bounds.size.width==320
+#define IPHONE5OR5S [UIScreen mainScreen].bounds.size.width==320
+#define IPHONE6OR6S [UIScreen mainScreen].bounds.size.width==375
+#define IPHONE6OR6S_PLUSS [UIScreen mainScreen].bounds.size.width>375
+#define FONT(x)  IPHONE5OR5S?[UIFont systemFontOfSize:(x-1)]:(IPHONE6OR6S?[UIFont systemFontOfSize:x]:(IPHONE6OR6S_PLUSS?[UIFont systemFontOfSize:(x+1)]:NO))
 #import "MBProgressHUD.h"
+#import "UIViewExt.h"
 #endif /* SportX__pch */

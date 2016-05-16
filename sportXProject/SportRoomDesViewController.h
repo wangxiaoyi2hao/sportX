@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SportRoomDesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface SportRoomDesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 {
 
     IBOutlet UIView*_headerView;
     IBOutlet UIView*_putCollection1;
     IBOutlet UIView*_putCollection2;
     IBOutlet UITableView*_tableView;
-
+    
 
 }
 @end

@@ -85,6 +85,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGL-tc-5Kh">
+                    <rect key="frame" x="19" y="145" width="336" height="258"/>
+                    <connections>
+                        <action selector="goRoomDes:" destination="-1" eventType="touchUpInside" id="8ez-IS-Tni"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空气净化剂 游泳池 洗澡间 游泳池 游泳池 胸部助力器 卧推器" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAT-KN-jD4">
                     <rect key="frame" x="71" y="294" width="258" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>

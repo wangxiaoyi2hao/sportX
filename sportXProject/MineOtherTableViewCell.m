@@ -22,7 +22,7 @@
             _MineLable.text = @"相册";
         }
         if (indexPath.row == 1) {
-            [_MineImageView setImage:[UIImage imageNamed:@"fensi.png"]];
+            [_MineImageView setImage:[UIImage imageNamed:@"1.pic_thumb.jpg"]];
             _MineLable.text = @"X币";
         }
     }

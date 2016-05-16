@@ -120,7 +120,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-z8-iH1">
-                    <rect key="frame" x="6" y="297" width="361" height="68"/>
+                    <rect key="frame" x="6" y="300" width="361" height="68"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>

@@ -11,6 +11,8 @@
 #import "InviteImageViewCell.h"
 #import "SprotViewTableViewCell.h"
 #import "SportRoomDesViewController.h"
+#import "FriendsAllViewController.h"
+#import "PersonDesViewController.h"
 //定义一个静态的collectionview的变量
 static NSString *iden = @"InfoCollectionViewCell";
 @interface SportXViewController ()
@@ -126,6 +128,13 @@ static NSString *iden = @"InfoCollectionViewCell";
 //    [putCollView addSubview:_collectionView1];
 //}
 //collectionview 的代理
+-(IBAction)goRoomDes:(UIButton*)sender{
+
+    SportRoomDesViewController*controller=[[SportRoomDesViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+
+
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return  nearFriendsArray.count;
 }
@@ -141,7 +150,14 @@ static NSString *iden = @"InfoCollectionViewCell";
 
 
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
+//    FriendsAllViewController*controller=[[FriendsAllViewController alloc]init];
+//    [self.navigationController pushViewController:controller animated:YES];
+    PersonDesViewController*controller=[[PersonDesViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+
+}
 -(void)loadScrollview{
     //广告图的数组
     bannerArray=[NSMutableArray arrayWithObjects:@"sportgo.jpg",@"sportgo.jpg",@"sportgo.jpg", nil];
