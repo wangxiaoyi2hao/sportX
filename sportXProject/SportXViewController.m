@@ -13,6 +13,8 @@
 #import "SportRoomDesViewController.h"
 #import "FriendsAllViewController.h"
 #import "PersonDesViewController.h"
+#import "SearchSportViewController.h"
+#import "TakeFriendQuanViewController.h"
 //定义一个静态的collectionview的变量
 static NSString *iden = @"InfoCollectionViewCell";
 @interface SportXViewController ()
@@ -58,12 +60,61 @@ static NSString *iden = @"InfoCollectionViewCell";
     [super viewDidLoad];
     _tableView.tableHeaderView=_headerView;
     [self loadScrollview];
+    [self loadNav];
 }
 -(void)viewWillAppear:(BOOL)animated{
        
      self.tabBarController.title=@"发现";
      [self.tabBarController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
+}
+-(void)loadNav{
+    
+    //左侧按钮
+    UIButton* leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    leftButton.backgroundColor = [UIColor clearColor];
+    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"icon_search.png"] forState:UIControlStateNormal];
+    leftButton.titleLabel.font=[UIFont systemFontOfSize:16];
+    UIBarButtonItem * leftitem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    self.tabBarController.navigationItem.leftBarButtonItem = leftitem;
+    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    //右侧按钮
+    UIButton*rightButton=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 25, 20 )];
+    rightButton.backgroundColor = [UIColor clearColor];
+    [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightButton setImage:[UIImage imageNamed:@"camera.png"] forState:UIControlStateNormal];
+    rightButton.titleLabel.font=[UIFont systemFontOfSize:16];
+    UIBarButtonItem *  rightitem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
+    self.tabBarController.navigationItem.rightBarButtonItem = rightitem;
+    [rightButton addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+}
+//右边按钮点击事件
+-(void)rightButtonClick{
+
+//跳转发布页面
+    TakeFriendQuanViewController*controller=[[TakeFriendQuanViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
+
+
+}
+//左边按钮点击事件
+-(void)leftButtonClick{
+
+    SearchSportViewController*controller=[[SearchSportViewController alloc]init];
+//    controller.hidesBottomBarWhenPushed=YES;
+    //初始化一个转场动画
+    CATransition *transition = [[CATransition alloc] init];
+    //设置转场动画风格
+    //transition.type = @"cube";
+    transition.duration = 0.3;
+    //设置动画的方向
+    transition.subtype = kCATransitionFromTop;
+    //把动画添加到导航控制器视图的图层上
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:controller animated:NO];
 }
 - (UICollectionView *)_addImgView{
     //    _mArray = [[NSMutableArray alloc] init];
@@ -97,7 +148,6 @@ static NSString *iden = @"InfoCollectionViewCell";
     //设置头视图的大小
     return _collectionView1;
 }
-
 //-(void)loadViewCollection{
 //#pragma mark  collectionView
 //    //1.创建布局对象

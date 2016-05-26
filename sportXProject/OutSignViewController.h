@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OutSignViewController : UIViewController
+@interface OutSignViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
 
+    IBOutlet UITableView*_tableview;
+
+}
 @end

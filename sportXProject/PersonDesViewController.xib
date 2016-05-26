@@ -55,6 +55,13 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_rectangle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ihb-bj-LpR">
                             <rect key="frame" x="87" y="48" width="88" height="28"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-LT-KGA">
+                            <rect key="frame" x="202" y="48" width="94" height="27"/>
+                            <color key="backgroundColor" red="0.074509803920000006" green="0.4941176471" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="消息">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -133,7 +140,7 @@
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="731.5" y="247"/>
+            <point key="canvasLocation" x="879.5" y="239"/>
         </view>
     </objects>
     <resources>

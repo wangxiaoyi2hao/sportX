@@ -10,6 +10,7 @@
 #import "SprotRoomTableViewCell.h"
 #import "InviteImageViewCell.h"
 #import "LookUpPicViewController.h"
+#import "DiscussViewController.h"
 static NSString *iden = @"InfoCollectionViewCell";
 @interface SportRoomDesViewController ()
 {
@@ -178,12 +179,17 @@ static NSString *iden = @"InfoCollectionViewCell";
     if (cell == nil) {
         NSArray*arry=[[NSBundle mainBundle]loadNibNamed:@"SprotRoomTableViewCell" owner:self options:nil];
         cell=[arry objectAtIndex:0];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+ 
     }
     cell.lbDes.text=@"111111111111111111";
     return  cell;
 
 #pragma  mark 这里面的cell 的type 不一样到时候看type 然后再根据东西来做
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    DiscussViewController*controller=[[DiscussViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

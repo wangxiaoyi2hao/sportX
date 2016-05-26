@@ -11,16 +11,22 @@
 #import "MessageViewController.h"
 #import "OutSignViewController.h"
 #import "SportXViewController.h"
-
+#import "UserInfo.h"
+#import "MyFile.h"
+#import "LoginViewController.h"
+extern UserInfo*LoginUserInfo;
 @interface AppDelegate ()
+{
 
+    int selectIndex;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    LoginUserInfo=[NSKeyedUnarchiver unarchiveObjectWithFile:[MyFile fileByDocumentPath:@"/isUserAll.archiver"]];
     _window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
      [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     UITabBarController*tabControl=[[UITabBarController alloc]init];
@@ -51,6 +57,22 @@
 
     return YES;
 }
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    int index=(int)[tabBarController selectedIndex];
+    if(index==2){
+//        if(LoginUserInfo==nil){
+//            LoginViewController*login=[[LoginViewController alloc]init];
+//            UINavigationController*nav=[[UINavigationController alloc]initWithRootViewController:login];
+//            [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg_ios7.png"] forBarMetrics:UIBarMetricsDefault];
+//            nav.navigationBar.titleTextAttributes=@{NSForegroundColorAttributeName:[UIColor whiteColor]};
+//            [tabBarController presentViewController:nav animated:YES completion:nil];
+//            tabBarController.selectedIndex=selectIndex;
+//        }
+    }else{
+//        selectIndex=(int)[tabBarController selectedIndex];
+    }
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -20,6 +20,13 @@
     _tableView.tableHeaderView=_headerView;
     // Do any additional setup after loading the view from its nib.
 }
+-(IBAction)buttonClick:(UIButton*)sender{
+
+
+
+
+
+}
 #pragma mark tableviewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
