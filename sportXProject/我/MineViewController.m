@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "MineHeadTableViewCell.h"
 #import "MineOtherTableViewCell.h"
+#import "UserInfoViewController.h"
 @interface MineViewController ()
 @property (nonatomic,weak) IBOutlet UITableView *myTableView;
 @end
@@ -62,6 +63,7 @@
             NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"MineHeadTableViewCell" owner:self options:nil];
             cell = [array objectAtIndex:0];
         }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }else {
     
@@ -70,10 +72,18 @@
             NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"MineOtherTableViewCell" owner:self options:nil];
             cell = [array objectAtIndex:0];
         }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell MineInfo:indexPath];
         return cell;
     }
     
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (indexPath.section == 0) {
+        [self.navigationController pushViewController:[UserInfoViewController new] animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
