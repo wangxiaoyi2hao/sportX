@@ -10,6 +10,12 @@
 #import "MineHeadTableViewCell.h"
 #import "MineOtherTableViewCell.h"
 #import "UserInfoViewController.h"
+#import "SetUpViewController.h"
+#import "FansViewController.h"
+#import "AttentionViewController.h"
+#import "XbiViewController.h"
+#import "UserPhotoMyViewController.h"
+extern UserInfo*LoginUserInfo;
 @interface MineViewController ()
 @property (nonatomic,weak) IBOutlet UITableView *myTableView;
 @end
@@ -18,9 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [AppDelegate matchAllScreenWithView:self.view];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [_myTableView reloadData];
   self.tabBarController.title=@"我";
     [self.tabBarController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor ]}];
 
@@ -33,10 +41,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (indexPath.section == 0) {
-        return 100;
+        return 100*app.autoSizeScaleY;
     } else {
-        return 53;
+        return 53*app.autoSizeScaleY;
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,6 +72,10 @@
             NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"MineHeadTableViewCell" owner:self options:nil];
             cell = [array objectAtIndex:0];
         }
+        [cell.MyHeaderView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",LoginUserInfo.userAvata]] placeholderImage:[UIImage imageNamed:@"headImg.png"]];
+        NSLog(@"%@",LoginUserInfo.userAvata);
+        cell.lbName.text=LoginUserInfo.userName;
+        cell.lbSigner.text=LoginUserInfo.userSign;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }else {
@@ -83,6 +96,38 @@
 
     if (indexPath.section == 0) {
         [self.navigationController pushViewController:[UserInfoViewController new] animated:YES];
+    }
+    if (indexPath.section==1) {
+        if (indexPath.row==0) {
+            NSLog(@"进入相册洁面");
+            UserPhotoMyViewController*controller=[[UserPhotoMyViewController alloc]init];
+            controller.fromUserid=LoginUserInfo.userId;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        if (indexPath.row==1) {
+            XbiViewController*controller=[[XbiViewController alloc]init];
+            [self .navigationController pushViewController:controller animated:YES];
+        }
+    }
+    if (indexPath.section==2) {
+ 
+            if (indexPath.row==0) {
+                AttentionViewController*controller=[[AttentionViewController alloc]init];
+                controller.fromUserID=LoginUserInfo.userId;
+                [self.navigationController pushViewController:controller  animated:YES];
+            }
+            if (indexPath.row==1) {
+                //粉丝
+                FansViewController*controller=[[FansViewController alloc]init];
+                controller.fromUserID=LoginUserInfo.userId;
+                [self.navigationController pushViewController:controller animated:YES];
+               
+            }
+        }
+    
+    if (indexPath.section==3) {
+        SetUpViewController*controller=[[SetUpViewController alloc]init];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

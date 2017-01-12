@@ -16,4 +16,8 @@
 @property(nonatomic,weak)IBOutlet UIView *changeView1;
 @property(nonatomic, strong)UICollectionView *collectionView;
 @property(nonatomic,strong)NSMutableArray*imageAray;
+@property(nonatomic,weak)IBOutlet UIImageView*_imageGym;
+@property(nonatomic,weak)IBOutlet UILabel*_lbName;
+@property(nonatomic,weak)IBOutlet UILabel*_lbAddress;
+@property(nonatomic,weak)IBOutlet UILabel*lbBigBei;
 @end

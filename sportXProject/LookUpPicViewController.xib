@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LookUpPicViewController">
             <connections>
+                <outlet property="_pageControl" destination="Lzt-Fk-fDN" id="72A-K3-awQ"/>
                 <outlet property="_scrollView" destination="TN2-oq-lQG" id="ZyB-Tl-Via"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,26 +17,45 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="all_back.png" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-ez-Frx">
-                    <rect key="frame" x="9" y="33" width="31" height="20"/>
-                </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-oq-lQG">
-                    <rect key="frame" x="0.0" y="100" width="375" height="458"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-oq-lQG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="zKq-IQ-XyJ"/>
+                    </connections>
                 </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="all_back.down.png" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-ez-Frx">
+                    <rect key="frame" x="18" y="22" width="24" height="36"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-nt-mDR">
                     <rect key="frame" x="9" y="25" width="55" height="36"/>
                     <connections>
                         <action selector="backeClick:" destination="-1" eventType="touchUpInside" id="vzC-T8-XuI"/>
                     </connections>
                 </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-Fk-fDN">
+                    <rect key="frame" x="168" y="582" width="39" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="Yxk-gw-CDo"/>
+                        <constraint firstAttribute="width" constant="39" id="zUg-ap-KuH"/>
+                    </constraints>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TN2-oq-lQG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2vq-UX-3wq"/>
+                <constraint firstAttribute="bottom" secondItem="TN2-oq-lQG" secondAttribute="bottom" id="5Lf-2h-eBO"/>
+                <constraint firstAttribute="trailing" secondItem="Lzt-Fk-fDN" secondAttribute="trailing" constant="168" id="Buf-fP-TEx"/>
+                <constraint firstItem="Lzt-Fk-fDN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="168" id="Ip1-RL-zd8"/>
+                <constraint firstAttribute="bottom" secondItem="Lzt-Fk-fDN" secondAttribute="bottom" constant="48" id="jAz-c5-Tgm"/>
+                <constraint firstAttribute="trailing" secondItem="TN2-oq-lQG" secondAttribute="trailing" id="o5N-Kq-Q9j"/>
+                <constraint firstItem="TN2-oq-lQG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vIX-jm-RNz"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="250.5" y="320.5"/>
         </view>
     </objects>
     <resources>
-        <image name="all_back.png" width="56" height="40"/>
+        <image name="all_back.down.png" width="40" height="56"/>
     </resources>
 </document>

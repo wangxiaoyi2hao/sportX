@@ -15,17 +15,27 @@
 #import "PersonDesViewController.h"
 #import "SearchSportViewController.h"
 #import "TakeFriendQuanViewController.h"
+#import "AFNetworking.h"
+extern float fromLongitude;
+extern float fromLatitude;
+extern UserInfo*LoginUserInfo;
 //定义一个静态的collectionview的变量
 static NSString *iden = @"InfoCollectionViewCell";
 @interface SportXViewController ()
 {
 
-//banner数组
+   //banner数组
     NSMutableArray*bannerArray;
     //页眉上面的collecitonview
     UICollectionView*_collectionView1;
     //假数据数组。。
     NSMutableArray*nearFriendsArray;
+    //分页count
+    int pageCount;
+    //附近健身房数组
+    NSMutableArray*nearGymArray;
+    //推荐健身房返回的参数
+    Response13003*response13003;
 
 }
 @end
@@ -33,43 +43,180 @@ static NSString *iden = @"InfoCollectionViewCell";
 @implementation SportXViewController
 
 - (void)viewDidLoad {
-   
-    #pragma mark 放一个假数据，后期网络请求时可以删除
-    nearFriendsArray=[NSMutableArray array];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    [nearFriendsArray addObject:@"0006.png"];
-    
+       [super viewDidLoad];
+    UITapGestureRecognizer *tapAddImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onclickAddImage)];
+    [_imageGymAva addGestureRecognizer:tapAddImage];
+    _imageGymAva.userInteractionEnabled = YES;
+    [AppDelegate matchAllScreenWithView:self.view];
+    [AppDelegate matchAllScreenWithView:_headerView];
     UICollectionView *collectionView = [self _addImgView];
     [putCollView addSubview:collectionView];
-    
-    
-    [super viewDidLoad];
+    self.navigationController.interactivePopGestureRecognizer.delegate=(id)self;
     _tableView.tableHeaderView=_headerView;
+    
+   
     [self loadScrollview];
     [self loadNav];
-}
--(void)viewWillAppear:(BOOL)animated{
-       
-     self.tabBarController.title=@"发现";
-     [self.tabBarController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self sendsend];
+    //加上下拉刷新
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        [self sendsend];
+    }];
+   _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+       [self sendsendDowLoad];
+    }];
+    
 
 }
--(void)loadNav{
+
+//请求附近健身房
+-(void)sendsend{
+    pageCount=0;
+    nearGymArray=nil;
+    nearGymArray=[NSMutableArray array];
+    [[Tostal sharTostal]showLoadingView:@"正在加载健身房" view:self.view];
+//分页做处理
+    NSString*str=[NSString stringWithFormat:@"%@/gym/getGymList",REQUESTURL];
+    //创建参数字符串对象
+    Request13001*request13001=[[Request13001 alloc]init];
+    request13001.common.userid=LoginUserInfo.userId;
+    request13001.common.userkey=LoginUserInfo.userKey;
+    request13001.common.cmdid=13001;
+    request13001.common.timestamp=[[NSDate date]timeIntervalSince1970];
+    request13001.common.platform=2;
+    request13001.common.version=@"1.0.0";
+    request13001.params.longitude=116.487654;
+    request13001.params.latitude=39.933565;
+    request13001.params.pageIndex=pageCount;
+    NSLog(@"%.2f",fromLatitude);
+    NSData*data2=[request13001 data];
+    [SendInternet httpNsynchronousRequestUrl:str postStr:data2 finshedBlock:^(NSData *dataString) {
+            Response13001*response13001=[Response13001 parseFromData:dataString error:nil];
+        if (response13001.common.code==0) {
+            for (int i=0; i<response13001.data_p.briefGymsArray.count; i++) {
+                BriefGym*gymRoom=[response13001.data_p.briefGymsArray objectAtIndex:i];
+                [nearGymArray addObject:gymRoom];
+            }
+            NSLog(@"%@",nearGymArray);
+            [_tableView reloadData];
+            [[Tostal sharTostal]hiddenView];
+             [_tableView.mj_header endRefreshing];
+        }else{
+              [[Tostal sharTostal]tostalMesg:response13001.common.message tostalTime:1];
+             [[Tostal sharTostal]hiddenView];
+             [_tableView.mj_header endRefreshing];
+            }
+        }];
+}
+//请求附近健身房
+-(void)sendsendDowLoad{
+    pageCount++;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //分页做处理
+    NSString*str=[NSString stringWithFormat:@"%@/gym/getGymList",REQUESTURL];
+    //创建参数字符串对象
+    Request13001*request13001=[[Request13001 alloc]init];
+    request13001.common.userid=LoginUserInfo.userId;
+    request13001.common.userkey=LoginUserInfo.userKey;
+    request13001.common.cmdid=13001;
+    request13001.common.timestamp=[[NSDate date]timeIntervalSince1970];
+    request13001.common.platform=2;
+    request13001.common.version=@"1.0.0";
+    request13001.params.longitude=116.487654;
+    request13001.params.latitude=39.933565;
+    NSLog(@"%.2f",LoginUserInfo.fromLatitue);
+    request13001.params.pageIndex=pageCount;
+    NSLog(@"%.2f",fromLatitude);
+    NSData*data2=[request13001 data];
+    [SendInternet httpNsynchronousRequestUrl:str postStr:data2 finshedBlock:^(NSData *dataString) {
+        Response13001*response13001=[Response13001 parseFromData:dataString error:nil];
+        if (response13001.common.code==0) {
+              NSLog(@"%@",response13001.data_p.briefGymsArray);
+            for (int i=0; i<response13001.data_p.briefGymsArray.count; i++) {
+                BriefGym*gymRoom=[response13001.data_p.briefGymsArray objectAtIndex:i];
+                [nearGymArray addObject:gymRoom];
+            }
+            if (response13001.data_p.maxCountPerPage>response13001.data_p.briefGymsArray.count) {
+                  [_tableView.mj_footer endRefreshingWithNoMoreData];
+            }else{
+            
+               [_tableView.mj_footer endRefreshing];
+            }
+            
+          
+            [_tableView reloadData];
+            [[Tostal sharTostal]hiddenView];
+         
+        }else{
+            [[Tostal sharTostal]tostalMesg:response13001.common.message tostalTime:1];
+            [[Tostal sharTostal]hiddenView];
+            [_tableView.mj_footer endRefreshing];
+        }
+    }];
+}
+
+//请求推荐健身房
+-(void)requestTopGym{
+     nearFriendsArray=nil;
+     nearFriendsArray=[NSMutableArray array];
+    //分页做处理
+    NSString*str=[NSString stringWithFormat:@"%@/gym/getRecommendGym",REQUESTURL];
+    //创建参数字符串对象
+    Request13003*request13003=[[Request13003 alloc]init];
+    request13003.common.userid=LoginUserInfo.userId;
+    request13003.common.userkey=LoginUserInfo.userKey;
+    request13003.common.cmdid=13003;
+    request13003.common.timestamp=[[NSDate date]timeIntervalSince1970];
+    request13003.common.platform=2;
+    request13003.common.version=@"1.0.0";
+    request13003.params.longitude=116.487654;
+    request13003.params.latitude=39.933565;
+    //询问后台看怎么去请求
+//    request13003.params.gymId=
+    NSLog(@"%.2f",fromLatitude);
+    NSData*data2=[request13003 data];
+
+    [SendInternet httpNsynchronousRequestUrl:str postStr:data2 finshedBlock:^(NSData *dataString) {
+       response13003=[Response13003 parseFromData:dataString error:nil];
+        if (response13003.common.code==0) {
+            NSLog(@"%@",nearGymArray);
+            [_imageGymAva sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",response13003.data_p.briefGym.gymAvatar]] placeholderImage:[UIImage imageNamed:@""]];
+            lbGymName.text=response13003.data_p.briefGym.gymName;
+            lbGymPerCount.text=[NSString stringWithFormat:@"%i",response13003.data_p.userNum];
+            lbGymSheBei.text=response13003.data_p.briefGym.eqm;
+            lbTrendCount.text=[NSString stringWithFormat:@"%i",response13003.data_p.trendNum];
+            for (int i=0; i<response13003.data_p.briefUsersArray.count; i++) {
+                BriefUser*brbr=[response13003.data_p.briefUsersArray objectAtIndex:i];
+                [nearFriendsArray addObject:brbr];
+            }
+            [_collectionView1 reloadData];
+         
+        }else{
+            [[Tostal sharTostal]tostalMesg:response13003.common.message tostalTime:1];
+        
+        }
+    }];
+}
+-(void)onclickAddImage{
     
+    
+    SportRoomDesViewController*controller=[[SportRoomDesViewController alloc]init];
+    controller.fromGymID=response13003.data_p.briefGym.id_p;
+    [self.navigationController pushViewController:controller animated:YES];
+    //吊的不行
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate=nil;
+    }
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.title=@"发现";
+    [self.tabBarController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    //推荐健身房
+    [self requestTopGym];
+}
+-(void)loadNav{
     //左侧按钮
     UIButton* leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     leftButton.backgroundColor = [UIColor clearColor];
@@ -94,6 +241,7 @@ static NSString *iden = @"InfoCollectionViewCell";
 //右边按钮点击事件
 -(void)rightButtonClick{
 
+    
 //跳转发布页面
     TakeFriendQuanViewController*controller=[[TakeFriendQuanViewController alloc]init];
     [self.navigationController pushViewController:controller animated:YES];
@@ -148,36 +296,7 @@ static NSString *iden = @"InfoCollectionViewCell";
     //设置头视图的大小
     return _collectionView1;
 }
-//-(void)loadViewCollection{
-//#pragma mark  collectionView
-//    //1.创建布局对象
-//    UICollectionViewFlowLayout *flowLayOut = [[UICollectionViewFlowLayout alloc] init];
-//    //设置单元格的大小
-//#pragma mark 考虑这里的适配
-//    flowLayOut.itemSize = CGSizeMake(20, 20);
-//    //设置滑动方向
-//    flowLayOut.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    //设置每行之间的最小空隙
-//    flowLayOut.minimumLineSpacing = 5;
-//    flowLayOut.minimumInteritemSpacing = 5;
-//     flowLayOut.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//     flowLayOut.minimumLineSpacing = 5;
-//    
-//#pragma mark- 报名成员(需要动态计算高度)
-//   
-//    _collectionView1 = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 31, 428) collectionViewLayout:flowLayOut];
-//    //上面的那个collectionview
-//    _collectionView1.backgroundColor = [UIColor clearColor];
-//    _collectionView1.tag=0;
-//    //设置代理
-//    _collectionView1.delegate = self;
-//    _collectionView1.dataSource = self;
-//        _collectionView1.showsHorizontalScrollIndicator=NO;
-//    //注册单元格
-//    [_collectionView1 registerClass:[InfoEditCollectionViewCell class] forCellWithReuseIdentifier:iden];
-//    [putCollView addSubview:_collectionView1];
-//}
-//collectionview 的代理
+///collectionview 的代理
 -(IBAction)goRoomDes:(UIButton*)sender{
 
     SportRoomDesViewController*controller=[[SportRoomDesViewController alloc]init];
@@ -192,8 +311,8 @@ static NSString *iden = @"InfoCollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     InviteImageViewCell*cell = [collectionView dequeueReusableCellWithReuseIdentifier:iden forIndexPath:indexPath];
-    NSString*imageName=[nearFriendsArray objectAtIndex:indexPath.row];
-    [cell.imgView setImage:[UIImage imageNamed:imageName]];
+    BriefUser*brbr2=[nearFriendsArray objectAtIndex:indexPath.row];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",brbr2.userAvatar]] placeholderImage:[UIImage imageNamed:@""]];
     //适配相册,让他可以
    
     return cell;
@@ -201,10 +320,9 @@ static NSString *iden = @"InfoCollectionViewCell";
 
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-//    FriendsAllViewController*controller=[[FriendsAllViewController alloc]init];
-//    [self.navigationController pushViewController:controller animated:YES];
+    BriefUser*brbr2=[nearFriendsArray objectAtIndex:indexPath.row];
     PersonDesViewController*controller=[[PersonDesViewController alloc]init];
+    controller.fromUserId=brbr2.userId;
     [self.navigationController pushViewController:controller animated:YES];
 
 }
@@ -226,7 +344,7 @@ static NSString *iden = @"InfoCollectionViewCell";
 
 
 
-    return 10;
+    return nearGymArray.count;
 }
 //组透视图
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -246,8 +364,8 @@ static NSString *iden = @"InfoCollectionViewCell";
     return 20;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 181;
+     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return 191*app.autoSizeScaleY;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -259,20 +377,38 @@ static NSString *iden = @"InfoCollectionViewCell";
     if (cell == nil) {
         NSArray*arry=[[NSBundle mainBundle]loadNibNamed:@"SprotViewTableViewCell" owner:self options:nil];
         cell=[arry objectAtIndex:0];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+     
     }
+    BriefGym*gymRoom;
+    if (nearGymArray.count!=0) {
+          gymRoom=[nearGymArray objectAtIndex:indexPath.row];
+    }
+  
+    [cell._imageGym sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",gymRoom.gymCover]] placeholderImage:[UIImage imageNamed:@""]];
+    cell._lbName.text=gymRoom.gymName;
+    cell._lbAddress.text=gymRoom.place;
+    //设备
+    cell.lbBigBei.text=gymRoom.eqm;
     return  cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
+    BriefGym*gymRoom=[nearGymArray objectAtIndex:indexPath.row];
     SportRoomDesViewController*controller=[[SportRoomDesViewController alloc]init];
+    controller.fromGymID=gymRoom.id_p;
     [self.navigationController pushViewController:controller animated:YES];
+    //吊的不行
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate=nil;
+    }
 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

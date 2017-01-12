@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserPhotoViewController : UIViewController
+@interface UserPhotoViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,weak) IBOutlet UIImageView *photoImageView;
 @end

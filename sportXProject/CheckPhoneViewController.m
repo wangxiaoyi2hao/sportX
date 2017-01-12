@@ -8,6 +8,7 @@
 
 #import "CheckPhoneViewController.h"
 #import "RegisterViewController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface CheckPhoneViewController ()
 
@@ -18,10 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadNav];
+    [AppDelegate matchAllScreenWithView:self.view];
+
     // Do any additional setup after loading the view from its nib.
 }
 -(void)loadNav{
-    self.title=@"注册";
+    self.title=@"请输入验证码";
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
     UIButton * leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 28, 20)];
     leftButton.backgroundColor = [UIColor clearColor];
@@ -39,8 +42,27 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(IBAction)changeNext:(UIButton*)sender{
-    RegisterViewController*controller=[[RegisterViewController alloc]init];
-    [self.navigationController pushViewController:controller animated:YES];
+#pragma mark 正确
+    [[Tostal sharTostal]showLoadingView:@"请等待" view:self.view];
+    [SMSSDK commitVerificationCode:_textYan.text phoneNumber:_fromPhoneNumber zone:@"86" result:^(NSError *error) {
+        
+        if (!error) {
+            NSLog(@"验证成功");
+            [[Tostal sharTostal]hiddenView];
+            RegisterViewController*controller=[[RegisterViewController alloc]init];
+      controller.fromPhoneNumber=_fromPhoneNumber;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        else
+        {
+            NSLog(@"错误信息:%@",error);
+            [[Tostal sharTostal]hiddenView];
+            [[Tostal sharTostal]tostalMesg:@"验证码错误" tostalTime:1];
+        }
+    }];
+#pragma 测试
+//    RegisterViewController*controller=[[RegisterViewController alloc]init];
+//    [self.navigationController pushViewController:controller animated:YES];
 
 
 }

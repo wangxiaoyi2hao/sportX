@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TakeFriendsTableViewCell : UITableViewCell
-
+@property(nonatomic,weak)IBOutlet UILabel*lbWhere;
 @end

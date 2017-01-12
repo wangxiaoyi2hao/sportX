@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController<UIActionSheetDelegate>
+@interface RegisterViewController : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,weak)IBOutlet UILabel*lbSex;
 @property(nonatomic,weak)IBOutlet UIImageView*imageHead;
+@property(nonatomic,weak)IBOutlet UITextField*tfName;
+@property(nonatomic,weak)IBOutlet UITextField*tfPwd;
+@property(nonatomic,copy)NSString*fromPhoneNumber;
 @end

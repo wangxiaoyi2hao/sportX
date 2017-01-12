@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchSportViewController : UIViewController<UISearchBarDelegate>
+@interface SearchSportViewController : UIViewController<UISearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    IBOutlet UITableView*_tableView;
+    IBOutlet UIView*_headerView;
+    IBOutlet UIView*_footerView;
+    IBOutlet UIView*_putCoView;
 
+
+}
 @end

@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchSportViewController">
             <connections>
+                <outlet property="_footerView" destination="TRy-7b-jV8" id="irA-Y8-YBS"/>
+                <outlet property="_headerView" destination="9YF-Og-nIc" id="7cE-Cj-Dxe"/>
+                <outlet property="_putCoView" destination="pJT-Lt-bvC" id="UjP-Gb-jCm"/>
+                <outlet property="_tableView" destination="fNP-iH-sN8" id="pud-e5-uZm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,8 +18,80 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-iH-sN8">
+                    <rect key="frame" x="0.0" y="43" width="375" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="XPZ-su-P7u"/>
+                        <outlet property="delegate" destination="-1" id="Ote-0t-vyb"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fNP-iH-sN8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NX3-6H-6T2"/>
+                <constraint firstItem="fNP-iH-sN8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="X4P-in-rhh"/>
+                <constraint firstAttribute="trailing" secondItem="fNP-iH-sN8" secondAttribute="trailing" id="oTy-Ks-tcN"/>
+                <constraint firstAttribute="bottom" secondItem="fNP-iH-sN8" secondAttribute="bottom" constant="21" id="pMF-SW-ShP"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="252.5" y="198.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="9YF-Og-nIc">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="热门搜索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-mi-85m">
+                    <rect key="frame" x="8" y="8" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-Lt-bvC">
+                    <rect key="frame" x="12" y="37" width="350" height="150"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="搜索记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-Ia-R4V">
+                    <rect key="frame" x="8" y="191" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="pJT-Lt-bvC" firstAttribute="leading" secondItem="9YF-Og-nIc" secondAttribute="leading" constant="12" id="1iK-gl-guK"/>
+                <constraint firstItem="pJT-Lt-bvC" firstAttribute="top" secondItem="9YF-Og-nIc" secondAttribute="top" constant="37" id="L6C-jy-Edg"/>
+                <constraint firstAttribute="bottom" secondItem="pJT-Lt-bvC" secondAttribute="bottom" constant="33" id="jcN-Im-s2g"/>
+                <constraint firstAttribute="trailing" secondItem="pJT-Lt-bvC" secondAttribute="trailing" constant="13" id="xPT-be-9Ah"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="151.5" y="-727"/>
+        </view>
+        <view contentMode="scaleToFill" id="TRy-7b-jV8">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-ca-gmp">
+                    <rect key="frame" x="1" y="0.0" width="373" height="42"/>
+                    <state key="normal" title="清空历史记录">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0063069409609999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="deleteAll:" destination="-1" eventType="touchUpInside" id="F2G-6M-a3Q"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8Rc-ca-gmp" firstAttribute="top" secondItem="TRy-7b-jV8" secondAttribute="top" id="Fb1-sq-ek3"/>
+                <constraint firstAttribute="bottom" secondItem="8Rc-ca-gmp" secondAttribute="bottom" id="Fz0-iW-6Up"/>
+                <constraint firstItem="8Rc-ca-gmp" firstAttribute="leading" secondItem="TRy-7b-jV8" secondAttribute="leading" constant="1" id="P25-Nr-Zax"/>
+                <constraint firstAttribute="trailing" secondItem="8Rc-ca-gmp" secondAttribute="trailing" constant="1" id="uI3-BH-ZZX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="233.5" y="-521"/>
         </view>
     </objects>
 </document>

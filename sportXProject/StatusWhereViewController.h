@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface StatusWhereViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+{
 
+    IBOutlet UITableView*_tableView;
+
+}
 @end

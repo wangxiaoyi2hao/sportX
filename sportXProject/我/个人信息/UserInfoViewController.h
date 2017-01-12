@@ -10,4 +10,5 @@
 
 @interface UserInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,weak) IBOutlet UITableView *myTableView;
+
 @end

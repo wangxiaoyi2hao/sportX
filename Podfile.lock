@@ -1,0 +1,68 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CTAssetsPickerController (2.9.5)
+  - HappyDNS (0.3.5)
+  - MBProgressHUD (0.9.2)
+  - MJPhotoBrowser (1.0.2):
+    - SDWebImage
+    - SVProgressHUD
+    - YLGIFImage
+  - MJRefresh (3.1.0)
+  - Protobuf (3.0.0-beta-3)
+  - Qiniu (7.0.20):
+    - AFNetworking (~> 2.0)
+    - HappyDNS (~> 0.3)
+  - RongCloudIMKit (2.6.1)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - SVProgressHUD (2.0.3)
+  - YLGIFImage (0.11)
+
+DEPENDENCIES:
+  - CTAssetsPickerController
+  - MBProgressHUD (~> 0.9.2)
+  - MJPhotoBrowser
+  - MJRefresh
+  - Protobuf (~> 3.0.0-alpha-4.1)
+  - Qiniu (~> 7.0)
+  - RongCloudIMKit (~> 2.6.0)
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CTAssetsPickerController: b413fece2194ae3dbf22fbc544cf6f2a6d516a4d
+  HappyDNS: 6f8cf46fa7c0b98a6591fe8ecb2e08d9907a6e8b
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJPhotoBrowser: f55e8490231f44a78ca6455105a1c798a142c95f
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  Protobuf: d2588b19d4d571b801d229efd73261b98bbe0248
+  Qiniu: 8958e70c02fb563c8c04d555bb5041441c5f4216
+  RongCloudIMKit: 36f00d9e54ef3650da894740b636b311a7ab4f4f
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
+
+PODFILE CHECKSUM: f709ee53f57fbad7ed2238f13c7a34fe4d8b599f
+
+COCOAPODS: 1.0.0

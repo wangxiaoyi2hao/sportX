@@ -16,6 +16,15 @@
     IBOutlet UIView*_headerView;
     IBOutlet UIImageView*_tabImageMain;
     IBOutlet UIView*putCollView;
+    //推荐健身房内容
+    IBOutlet UIImageView*_imageGymAva;
+    IBOutlet UILabel*lbGymName;
+    IBOutlet UILabel*lbGymPerCount;
+    IBOutlet UILabel*lbGymSheBei;
+    IBOutlet UILabel*lbTrendCount;
+
+    
 
 }
+@property(nonatomic,copy)NSMutableData*receiveData;
 @end

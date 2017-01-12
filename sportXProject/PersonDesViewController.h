@@ -13,7 +13,17 @@
 
     IBOutlet UIView*_headerView;
     IBOutlet UITableView*_tableView;
+    IBOutlet UILabel*lbName;
+    IBOutlet UIImageView*_imageHead;
+    IBOutlet UILabel*lbGuanConunt;
+    IBOutlet UILabel*lbFenScount;
+    IBOutlet UILabel*lbDong;
+    IBOutlet UILabel*lbSign;
+    IBOutlet UIButton*buttonAtten;
+    
+    
 
 
 }
+@property(nonatomic,assign)int fromUserId;
 @end

@@ -16,7 +16,9 @@
 //+( CLLocationDistance)meterKiloHaveHowLong:(float)orginLatitude wei:(float)orginlongitude arrJing:(float)arrivewLocationJing arrWei:(float)arriLocationWei;
 +(BOOL) isValidateMobile:(NSString *)mobile;
 //md5
-
-+(NSString*)md532BitUpper:(NSString*)password;
+//
+//+(NSString*)md532BitUpper:(NSString*)password
+//时间戳转时间的
++(NSString*)howToDateTimeZhua:(NSString*)timeChuan;
 
 @end

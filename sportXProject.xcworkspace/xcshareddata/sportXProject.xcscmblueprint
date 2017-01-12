@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A59CC3164B215C5CC479E72C71562C140C2B681A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "35ff53f9-0633-3540-ae98-7c0b4ca7b40b++3294" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "35ff53f9-0633-3540-ae98-7c0b4ca7b40b++3294" : 0,
+    "A59CC3164B215C5CC479E72C71562C140C2B681A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D4B6D9E6-0BB9-488B-9AE5-10DB62C995C6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "35ff53f9-0633-3540-ae98-7c0b4ca7b40b++3294" : "spotrtx%20%E5%90%88%E4%BD%9C\/sportXProject\/MJPhotoBrowser\/",
+    "A59CC3164B215C5CC479E72C71562C140C2B681A" : "spotrtx%20%E5%90%88%E4%BD%9C\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "sportXProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "sportXProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.58\/svn\/GO_IOS",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "35ff53f9-0633-3540-ae98-7c0b4ca7b40b++3294"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/code.csdn.net\/Jasonisxu\/sportx.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A59CC3164B215C5CC479E72C71562C140C2B681A"
+    }
+  ]
+}

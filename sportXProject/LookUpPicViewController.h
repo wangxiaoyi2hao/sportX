@@ -12,6 +12,9 @@
 {
 
  IBOutlet UIScrollView*_scrollView;
+    IBOutlet UIPageControl *_pageControl;
 
 }
+@property (nonatomic,assign)int index;
+@property(nonatomic,strong)NSMutableArray*imageArray;
 @end

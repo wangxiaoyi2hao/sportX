@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SprotRoomTableViewCell : UITableViewCell
-@property(nonatomic,weak)IBOutlet UILabel*lbDes;
+@interface SprotRoomTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
+@property(nonatomic,strong)UILabel*lbDes1;
+
+@property(nonatomic,weak)IBOutlet UIImageView*_imageHead;
+@property(nonatomic,weak)IBOutlet UILabel*lbName;
+@property(nonatomic,strong) UIView*downView;
+@property(nonatomic,strong) UIImageView*bigImageP;
+@property(nonatomic,strong)UILabel*labelZan;
+@property(nonatomic,strong)UILabel*labelPing;
+@property(nonatomic,strong) UILabel*lbLine;
+@property(nonatomic,strong)UICollectionView*collectionView;
+@property(nonatomic,strong)NSMutableArray*picturArray;
+@property(nonatomic,strong)UIImageView*imageZan;
+@property(nonatomic,strong)UIButton*buttonZan;
+@property(nonatomic,strong)UILabel*lbTime;
+@property(nonatomic,strong)UILabel*lbDiDIan;
+
+
 @end

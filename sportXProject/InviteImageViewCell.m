@@ -20,14 +20,7 @@
     return self;
 }
 
-//- (void)setImgName:(NSString *)imgName {
-//    
-//    _imgName = imgName;
-//    
-//    _imgView.image = [UIImage imageNamed:_imgName];
-//    
-//    
-//}
+
 - (void)setImgView:(UIImageView *)imgView{
     _imgView = imgView;
 }

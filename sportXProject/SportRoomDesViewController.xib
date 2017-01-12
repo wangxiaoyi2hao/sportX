@@ -8,9 +8,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SportRoomDesViewController">
             <connections>
                 <outlet property="_headerView" destination="pKE-rI-scV" id="rM8-1d-Yc6"/>
+                <outlet property="_imageGymHead" destination="Alo-7Q-h9R" id="NjL-HZ-FO7"/>
                 <outlet property="_putCollection1" destination="mwD-z8-iH1" id="W5w-8O-C0P"/>
                 <outlet property="_putCollection2" destination="Poa-FS-sL0" id="bZf-Nz-eOA"/>
                 <outlet property="_tableView" destination="7uw-Tb-Yaf" id="Kxr-bd-ecS"/>
+                <outlet property="lbAddress" destination="ebo-BH-ZbZ" id="r6v-ET-8GF"/>
+                <outlet property="lbMessage" destination="vea-Of-Wfq" id="VB1-Dr-8zd"/>
+                <outlet property="lbName" destination="cNb-iD-4n4" id="G3m-n6-JBw"/>
+                <outlet property="lbPerson" destination="yPt-dG-6ZW" id="b1b-Gm-WS1"/>
+                <outlet property="lbPrice" destination="9s2-a2-8z6" id="gHq-ES-rad"/>
+                <outlet property="lbThings" destination="ZTE-QS-9vx" id="C3u-eM-KxZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,114 +26,143 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-Tb-Yaf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-Tb-Yaf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="8U6-45-Er7"/>
                         <outlet property="delegate" destination="-1" id="PaR-er-ZqF"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="7uw-Tb-Yaf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TvZ-y1-d7P"/>
+                <constraint firstAttribute="trailing" secondItem="7uw-Tb-Yaf" secondAttribute="trailing" id="ZJp-dC-IDF"/>
+                <constraint firstAttribute="bottom" secondItem="7uw-Tb-Yaf" secondAttribute="bottom" id="kO8-A8-lie"/>
+                <constraint firstItem="7uw-Tb-Yaf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x8p-ay-GDo"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="250.5" y="320.5"/>
         </view>
         <view contentMode="scaleToFill" id="pKE-rI-scV">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="477"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="7YF-Kt-esg">
-                    <rect key="frame" x="-4" y="-2" width="384" height="274"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="7YF-Kt-esg">
+                    <rect key="frame" x="-4" y="0.0" width="384" height="274"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="384" id="Ecn-jK-7I6"/>
+                        <constraint firstAttribute="height" constant="274" id="n49-18-3Rv"/>
+                    </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yoga.png" translatesAutoresizingMaskIntoConstraints="NO" id="wNe-P9-2sM">
-                    <rect key="frame" x="6" y="111" width="30" height="30"/>
+                    <rect key="frame" x="6" y="113" width="30" height="30"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="北京体育场" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNb-iD-4n4">
-                    <rect key="frame" x="61" y="6" width="146" height="21"/>
+                    <rect key="frame" x="61" y="8" width="314" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDF-Iz-4Pj">
-                    <rect key="frame" x="42" y="64" width="1" height="200"/>
+                    <rect key="frame" x="42" y="66" width="1" height="200"/>
                     <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vd8-Ux-VdY">
-                    <rect key="frame" x="9" y="153" width="25" height="25"/>
+                    <rect key="frame" x="9" y="155" width="25" height="25"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gym.png" translatesAutoresizingMaskIntoConstraints="NO" id="RLb-NC-Nmx">
-                    <rect key="frame" x="9" y="70" width="25" height="25"/>
+                    <rect key="frame" x="9" y="72" width="25" height="25"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Alo-7Q-h9R">
-                    <rect key="frame" x="8" y="6" width="45" height="46"/>
+                    <rect key="frame" x="8" y="8" width="45" height="46"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空气净化剂 游泳池 洗澡间 游泳池 游泳池 胸部助力器 卧推器" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTE-QS-9vx">
-                    <rect key="frame" x="53" y="72" width="302" height="26"/>
+                    <rect key="frame" x="53" y="74" width="302" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speech.png" translatesAutoresizingMaskIntoConstraints="NO" id="H7Y-xP-oq5">
-                    <rect key="frame" x="12" y="198" width="20" height="20"/>
+                    <rect key="frame" x="12" y="200" width="20" height="20"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空气净化剂 游泳池 洗澡间 游泳池 游泳池 胸部助力器 卧推器" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s2-a2-8z6">
-                    <rect key="frame" x="54" y="153" width="301" height="26"/>
+                    <rect key="frame" x="54" y="155" width="301" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="空气净化剂 游泳池 洗澡间 游泳池 游泳池 胸部助力器 卧推器" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPt-dG-6ZW">
-                    <rect key="frame" x="53" y="113" width="302" height="26"/>
+                    <rect key="frame" x="53" y="115" width="302" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="海淀区海淀黄庄4号楼2503" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebo-BH-ZbZ">
-                    <rect key="frame" x="61" y="29" width="269" height="21"/>
+                    <rect key="frame" x="61" y="31" width="314" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="仅限一次体验完毕那女不限制，仅限值16岁以上至60岁以下的体验，不适宜的人群不允许参加患有心肺功能疾病，脊椎病，皮肤病及一切传染病患者买本方案仅限首次体验，不可重复使用，商家原会员不可使用美" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vea-Of-Wfq">
-                    <rect key="frame" x="54" y="187" width="301" height="71"/>
+                    <rect key="frame" x="54" y="189" width="301" height="71"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="od1-i3-VFS">
-                    <rect key="frame" x="-4" y="275" width="384" height="101"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="od1-i3-VFS">
+                    <rect key="frame" x="-4" y="277" width="384" height="101"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="384" id="KRm-Ce-Fcg"/>
+                        <constraint firstAttribute="height" constant="101" id="N5r-0D-aXk"/>
+                    </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="cNn-nt-ROl">
-                    <rect key="frame" x="-5" y="382" width="384" height="86"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="cNn-nt-ROl">
+                    <rect key="frame" x="-5" y="384" width="384" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="384" id="0gi-Kc-egp"/>
+                        <constraint firstAttribute="height" constant="86" id="6OU-DR-AXh"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="附近朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-Ti-PcQ">
-                    <rect key="frame" x="9" y="384" width="67" height="21"/>
+                    <rect key="frame" x="9" y="386" width="67" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-FS-sL0">
-                    <rect key="frame" x="6" y="407" width="361" height="57"/>
+                    <rect key="frame" x="6" y="409" width="361" height="57"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="场馆图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-fT-7Y2">
-                    <rect key="frame" x="9" y="280" width="67" height="21"/>
+                    <rect key="frame" x="9" y="282" width="67" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-z8-iH1">
-                    <rect key="frame" x="6" y="300" width="361" height="68"/>
+                    <rect key="frame" x="6" y="302" width="361" height="68"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="7YF-Kt-esg" firstAttribute="top" secondItem="pKE-rI-scV" secondAttribute="top" id="3jk-OT-fW1"/>
+                <constraint firstItem="cNn-nt-ROl" firstAttribute="leading" secondItem="pKE-rI-scV" secondAttribute="leading" constant="-5" id="5vQ-xb-W8o"/>
+                <constraint firstAttribute="trailing" secondItem="od1-i3-VFS" secondAttribute="trailing" constant="-5" id="6DA-Gq-E49"/>
+                <constraint firstItem="7YF-Kt-esg" firstAttribute="leading" secondItem="pKE-rI-scV" secondAttribute="leading" constant="-4" id="BAK-Au-0xH"/>
+                <constraint firstAttribute="trailing" secondItem="7YF-Kt-esg" secondAttribute="trailing" constant="-5" id="SZx-MQ-BZu"/>
+                <constraint firstAttribute="trailing" secondItem="cNn-nt-ROl" secondAttribute="trailing" constant="-4" id="dKc-Mf-B1B"/>
+                <constraint firstAttribute="bottom" secondItem="cNn-nt-ROl" secondAttribute="bottom" constant="9" id="ifr-WC-5ZC"/>
+                <constraint firstItem="od1-i3-VFS" firstAttribute="top" secondItem="7YF-Kt-esg" secondAttribute="bottom" constant="3" id="mFC-c9-YAf"/>
+                <constraint firstItem="od1-i3-VFS" firstAttribute="leading" secondItem="pKE-rI-scV" secondAttribute="leading" constant="-4" id="yiK-h9-0Bv"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="832.5" y="317.5"/>
+            <point key="canvasLocation" x="674.5" y="178.5"/>
         </view>
     </objects>
     <resources>

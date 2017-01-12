@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
-
+@interface LoginViewController : UIViewController<UITabBarControllerDelegate>
+@property(nonatomic,weak)IBOutlet UITextField*_tfPoneNum;
+@property(nonatomic,weak)IBOutlet UITextField*_tfPassWord;
+@property(nonatomic,assign)int fromWhere;
 @end

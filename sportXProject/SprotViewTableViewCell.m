@@ -13,6 +13,7 @@ static NSString *iden = @"InviteImageViewCell";
 @implementation SprotViewTableViewCell
 
 - (void)awakeFromNib {
+    [AppDelegate matchAllScreenWithView:self.contentView];
     _imageAray=[NSMutableArray arrayWithObjects:@"0006",@"0006",@"0006",@"0006",@"0006",@"0006", nil];
     UICollectionView *collectionView = [self _addImgView];
     [self.changeView1 addSubview:collectionView];

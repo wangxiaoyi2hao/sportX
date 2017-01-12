@@ -10,4 +10,7 @@
 
 @interface StatusWhereTableViewCell : UITableViewCell
 @property(nonatomic,weak)IBOutlet UILabel*lbName;
+@property(nonatomic,weak)IBOutlet UILabel*lbAddress;
+@property(nonatomic,weak)IBOutlet UIImageView*imageHead;
+@property(nonatomic,weak)IBOutlet UILabel*lbMeter;
 @end

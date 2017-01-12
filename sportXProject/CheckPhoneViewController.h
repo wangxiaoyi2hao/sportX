@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckPhoneViewController : UIViewController
+{
 
+    IBOutlet UITextField*_textYan;
+}
+@property(nonatomic,copy)NSString*fromPhoneNumber;
 @end

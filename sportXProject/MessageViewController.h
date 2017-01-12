@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RongIMKit/RongIMKit.h>
 
-@interface MessageViewController : UIViewController
+@interface MessageViewController : RCConversationListViewController
 
 @end

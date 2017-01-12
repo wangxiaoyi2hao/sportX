@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UserInfoTableViewCell : UITableViewCell
-
+//@property(nonatomic,weak)IBOutlet UIButton*_buttonHead;
+@property(nonatomic,weak)IBOutlet UIImageView*_imageHead;
 @end

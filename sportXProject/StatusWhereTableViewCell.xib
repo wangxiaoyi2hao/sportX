@@ -38,6 +38,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageHead" destination="HYo-IL-ywS" id="xZB-Bv-iPZ"/>
+                <outlet property="lbAddress" destination="sPg-DB-fZm" id="MrO-1A-Ndf"/>
+                <outlet property="lbMeter" destination="F3D-e6-pwB" id="HMs-nt-dJQ"/>
                 <outlet property="lbName" destination="DSO-aj-zQe" id="RD7-dL-Fw4"/>
             </connections>
             <point key="canvasLocation" x="250.5" y="314"/>

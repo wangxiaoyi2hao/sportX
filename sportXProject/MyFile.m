@@ -52,6 +52,9 @@
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phoneTest evaluateWithObject:mobile];
 }
-
+//时间戳转字符串
+//+(NSString*)howToDateTimeZhua:(NSString*)timeChuan{
+//    
+//}
 
 @end
